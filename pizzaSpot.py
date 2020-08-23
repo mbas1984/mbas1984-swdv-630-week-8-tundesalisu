@@ -27,7 +27,7 @@ class person:
         self.kindOfPerson =  input("Enter the kind of person Please ['customer' 'cashier' 'cashier','chef']: ")
         if (self.kindOfPerson.lower() == "customer"):  
             print("you are a customer!!!") # identify customer
-            pizza = input("What kind of pizza would you like: ? ")
+            pizza = input("What kind of pizza  would you like: ?")
             side = input ("What Kind of side would you like: ? ")
             drink = input ("What Kind of drink would you like: ? ")
             self.customerOrderProfile["mPizza"] = pizza
@@ -43,6 +43,7 @@ class person:
             print(f"Order Received and processing")
             print(f"Your order item Listed  below will be delivered momentarily ")
             print (f"Order sent to Chef  for Preparation")
+            print(f"Items received: {self.customerOrderProfile['mPizza']}, {self.customerOrderProfile['mSide']}, and {self.customerOrderProfile['mdrink']} ")
             
         elif (self.kindOfPerson == "chef"):
             print("Order received")
@@ -52,13 +53,17 @@ class person:
             print(f"{'*' * 30}")
             print(f"{'*' * 30}")
             
-            
+    def deliverCustomer(self):
+        print(f"{'*' * 30}")
+        print(f"{'*' * 30}")
+        print("Order Complete")
+        print("Thank you for your order")
+        print ("Come back soon")
     
     def __repr__(self):
        # if (self.kindOfPerson.lower() == "customer"):
         return f" Customer First name: {self.fname} \n"\
                            f" Customer Last name: {self.lname}\n"\
-                            f" Role of Person: {self.kindOfPerson}\n"\
                             f" Pizza ordered : {self.customerOrderProfile['mPizza']} cost: ${self.customerOrderProfile['cPizza']}\n"\
                             f" Side ordered : {self.customerOrderProfile['mSide']} cost: ${self.customerOrderProfile['cSide']}\n"\
                             f" Drink ordered : {self.customerOrderProfile['mdrink']} cost: ${self.customerOrderProfile['cdrink']}\n"\
@@ -87,6 +92,7 @@ print("Enter 'chef' (Demo Test)")
 input("Enter any key to continue/")
 kappa.decidingPerson()
 print(kappa)
+kappa.deliverCustomer()
 
 
 
